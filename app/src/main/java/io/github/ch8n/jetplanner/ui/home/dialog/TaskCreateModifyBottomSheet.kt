@@ -153,16 +153,15 @@ class TaskCreateModifyBottomSheet : BottomSheetDialogFragment() {
 
             when (timePickerRequestCode) {
                 1000 -> {
-                    currentTask = currentTask.copy(startTime = selectedTimeSeconds)
+                    currentTask = currentTask.copy(startTime = selectedTimeMillis)
                     binding.textTaskFrom.setText(selectedTimeMillis.toTime())
                 }
                 1001 -> {
-                    currentTask = currentTask.copy(endTime = selectedTimeSeconds)
+                    currentTask = currentTask.copy(endTime = selectedTimeMillis)
                     binding.textTaskTo.setText(selectedTimeMillis.toTime())
                 }
             }
         }
-
 
         val timePickerDialog = TimePickerDialog(
             requireContext(),
@@ -175,13 +174,17 @@ class TaskCreateModifyBottomSheet : BottomSheetDialogFragment() {
         binding.textTaskFrom.setOnClickListener {
             timePickerRequestCode = 1000
             timePickerDialog.show()
+            println("Showing Time Picker for Start Time")
         }
 
         binding.textTaskTo.setOnClickListener {
             timePickerRequestCode = 1001
             timePickerDialog.show()
+            println("Showing Time Picker for End Time")
         }
     }
+
+
 
     private fun bottomSheetTransparentBackground(root: ConstraintLayout) {
         val bottomSheet = (root.parent as View)
