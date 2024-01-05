@@ -31,6 +31,7 @@ data class Task(
     val status: TaskStatus,
     val startTime: Long,
     val endTime: Long,
+    val priority: Int,
 ) {
 
     val displayStartTime: String
@@ -47,6 +48,8 @@ data class Task(
                 status = TaskStatus.PENDING,
                 startTime = 0,
                 endTime = 0,
+                priority = 0
             )
     }
 }
+
