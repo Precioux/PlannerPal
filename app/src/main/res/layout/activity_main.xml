@@ -117,7 +117,22 @@
             android:id="@+id/included_current_task"
             layout="@layout/layout_current_task" />
 
+
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <Button
+        android:id="@+id/btnGenerateImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:backgroundTint="@color/red"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Generate"
+        android:textSize="15sp"
+        app:cornerRadius="16dp"
+        app:layout_constraintStart_toEndOf="@id/label_date"
+        app:layout_constraintTop_toTopOf="@id/label_date" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

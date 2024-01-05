@@ -120,13 +120,13 @@ class TaskCreateModifyBottomSheet : BottomSheetDialogFragment() {
     private fun autoPopulateUI() = with(binding) {
         when (val taskBottomSheet = bottomSheetType) {
             is TaskBottomSheetType.CreateTask -> {
-                btmLabelActionType.text = getString(R.string.create_task)
+                btmLabelActionType.setText(getString(R.string.create_task))
             }
             is TaskBottomSheetType.ModifyTask -> with(taskBottomSheet.task) {
-                btmLabelActionType.text = getString(R.string.modify_task)
+                btmLabelActionType.setText(getString(R.string.modify_task))
                 editTaskName.editText?.setText(name)
-                textTaskFrom.text = displayStartTime
-                textTaskTo.text = displayEndTime
+                textTaskFrom.setText(displayStartTime)
+                textTaskTo.setText(displayEndTime)
             }
         }
     }
@@ -153,21 +153,12 @@ class TaskCreateModifyBottomSheet : BottomSheetDialogFragment() {
 
             when (timePickerRequestCode) {
                 1000 -> {
-<<<<<<< HEAD
-                    currentTask = currentTask.copy(startTime = selectedTime)
-                    binding.textTaskFrom.text = selectedTime.toTime()
-                }
-                1001 -> {
-                    currentTask = currentTask.copy(endTime = selectedTime)
-                    binding.textTaskTo.text = selectedTime.toTime()
-=======
                     currentTask = currentTask.copy(startTime = selectedTimeMillis)
                     binding.textTaskFrom.setText(selectedTimeMillis.toTime())
                 }
                 1001 -> {
                     currentTask = currentTask.copy(endTime = selectedTimeMillis)
                     binding.textTaskTo.setText(selectedTimeMillis.toTime())
->>>>>>> 0d9461d05e426525a2098879adcf97527d5d4053
                 }
             }
         }

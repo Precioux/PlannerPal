@@ -31,9 +31,8 @@ data class Task(
 
     val status: TaskStatus,
     val startTime: Long,
-    val endTime: Long,
-    val priority: Int,
-) {
+    val endTime: Long
+){
 
     val displayStartTime: String
         get() = startTime.toTime()
@@ -48,16 +47,8 @@ data class Task(
                 name = "",
                 status = TaskStatus.PENDING,
                 startTime = 0,
-                endTime = 0,
-                priority = 0
+                endTime = 0
             )
     }
 }
-
-//fun main() {
-//    val currentTimeMillis = System.currentTimeMillis()
-//    val formattedTime = currentTimeMillis.toTime()
-//
-//    println("Formatted Time: $formattedTime")
-//}
 
