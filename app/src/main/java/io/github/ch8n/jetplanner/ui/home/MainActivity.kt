@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
 
         val folder = File(
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
-            "PlannerPalScreenshots"
+            "PlannerPalTasks"
         )
 
         if (!folder.exists()) {
