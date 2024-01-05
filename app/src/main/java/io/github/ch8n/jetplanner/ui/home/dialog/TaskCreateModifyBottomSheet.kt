@@ -10,6 +10,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TimePicker
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import io.github.ch8n.jetplanner.R
@@ -143,18 +144,30 @@ class TaskCreateModifyBottomSheet : BottomSheetDialogFragment() {
         val currentHour: Int = calendar.get(Calendar.HOUR_OF_DAY)
         val currentMinute: Int = calendar.get(Calendar.MINUTE)
 
-        val onTimeSelected = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+        val onTimeSelected = TimePickerDialog.OnTimeSetListener { view: TimePicker?, hourOfDay, minute ->
             calendar.set(Calendar.HOUR_OF_DAY, hourOfDay)
             calendar.set(Calendar.MINUTE, minute)
-            val selectedTime = calendar.time.toInstant().epochSecond
+
+            val selectedTimeMillis = calendar.timeInMillis
+            val selectedTimeSeconds = selectedTimeMillis / 1000
+
             when (timePickerRequestCode) {
                 1000 -> {
+<<<<<<< HEAD
                     currentTask = currentTask.copy(startTime = selectedTime)
                     binding.textTaskFrom.text = selectedTime.toTime()
                 }
                 1001 -> {
                     currentTask = currentTask.copy(endTime = selectedTime)
                     binding.textTaskTo.text = selectedTime.toTime()
+=======
+                    currentTask = currentTask.copy(startTime = selectedTimeMillis)
+                    binding.textTaskFrom.setText(selectedTimeMillis.toTime())
+                }
+                1001 -> {
+                    currentTask = currentTask.copy(endTime = selectedTimeMillis)
+                    binding.textTaskTo.setText(selectedTimeMillis.toTime())
+>>>>>>> 0d9461d05e426525a2098879adcf97527d5d4053
                 }
             }
         }
@@ -170,13 +183,17 @@ class TaskCreateModifyBottomSheet : BottomSheetDialogFragment() {
         binding.textTaskFrom.setOnClickListener {
             timePickerRequestCode = 1000
             timePickerDialog.show()
+            println("Showing Time Picker for Start Time")
         }
 
         binding.textTaskTo.setOnClickListener {
             timePickerRequestCode = 1001
             timePickerDialog.show()
+            println("Showing Time Picker for End Time")
         }
     }
+
+
 
     private fun bottomSheetTransparentBackground(root: ConstraintLayout) {
         val bottomSheet = (root.parent as View)
