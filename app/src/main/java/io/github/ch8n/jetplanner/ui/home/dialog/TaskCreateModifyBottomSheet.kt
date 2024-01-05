@@ -10,6 +10,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TimePicker
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import io.github.ch8n.jetplanner.R
@@ -143,21 +144,25 @@ class TaskCreateModifyBottomSheet : BottomSheetDialogFragment() {
         val currentHour: Int = calendar.get(Calendar.HOUR_OF_DAY)
         val currentMinute: Int = calendar.get(Calendar.MINUTE)
 
-        val onTimeSelected = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+        val onTimeSelected = TimePickerDialog.OnTimeSetListener { view: TimePicker?, hourOfDay, minute ->
             calendar.set(Calendar.HOUR_OF_DAY, hourOfDay)
             calendar.set(Calendar.MINUTE, minute)
-            val selectedTime = calendar.time.toInstant().epochSecond
+
+            val selectedTimeMillis = calendar.timeInMillis
+            val selectedTimeSeconds = selectedTimeMillis / 1000
+
             when (timePickerRequestCode) {
                 1000 -> {
-                    currentTask = currentTask.copy(startTime = selectedTime)
-                    binding.textTaskFrom.setText(selectedTime.toTime())
+                    currentTask = currentTask.copy(startTime = selectedTimeSeconds)
+                    binding.textTaskFrom.setText(selectedTimeMillis.toTime())
                 }
                 1001 -> {
-                    currentTask = currentTask.copy(endTime = selectedTime)
-                    binding.textTaskTo.setText(selectedTime.toTime())
+                    currentTask = currentTask.copy(endTime = selectedTimeSeconds)
+                    binding.textTaskTo.setText(selectedTimeMillis.toTime())
                 }
             }
         }
+
 
         val timePickerDialog = TimePickerDialog(
             requireContext(),
