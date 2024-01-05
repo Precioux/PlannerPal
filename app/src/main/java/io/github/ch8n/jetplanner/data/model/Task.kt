@@ -28,6 +28,7 @@ fun Long.toTime(formatting: String = "hh:mm a"): String {
 data class Task(
     @PrimaryKey val id: String,
     val name: String,
+
     val status: TaskStatus,
     val startTime: Long,
     val endTime: Long,
@@ -53,12 +54,10 @@ data class Task(
     }
 }
 
-<<<<<<< HEAD
-=======
 //fun main() {
 //    val currentTimeMillis = System.currentTimeMillis()
 //    val formattedTime = currentTimeMillis.toTime()
 //
 //    println("Formatted Time: $formattedTime")
 //}
->>>>>>> 0d9461d05e426525a2098879adcf97527d5d4053
+
