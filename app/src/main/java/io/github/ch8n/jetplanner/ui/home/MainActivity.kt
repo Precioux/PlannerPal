@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun saveScreenshot(bitmap: Bitmap) {
-        val fileName = "screenshot_${SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())}.png"
+        val fileName = "list_of_tasks${SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())}.png"
 
         val folder = File(
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
@@ -94,10 +94,10 @@ class MainActivity : AppCompatActivity() {
             fileOutputStream.flush()
             fileOutputStream.close()
 
-            showToast("Screenshot saved to ${file.absolutePath}")
+            showToast("Tasks saved to ${file.absolutePath}")
         } catch (e: Exception) {
             e.printStackTrace()
-            showToast("Failed to save screenshot")
+            showToast("Failed to save Tasks")
         }
     }
 
