@@ -1,64 +1,23 @@
-# Big Brain Kotlin : Application #2 - JetPlanner
-Day Planner Application for Android
+# PlannerPal
 
-## ScreenShots
-![Image](/assets/img.png)
-![Image](/assets/img_1.png)
-![Image](/assets/img_2.png)
+Welcome to PlannerPal, your go-to simple planner for organizing tasks! This project was crafted as the final masterpiece of the Android Programming Course at Amirkabir University of Technology in the fall of 2023.s
 
-## Feature
-- List Task -> Recycler View
-- Create task -> Bottom Sheet Form
-- Selecting Start - End time -> TimePicker Dialog
-- Modify task -> Long press opens update Bottom sheet
-- Delete task -> Swipe Right on Recycler View
-- Current task -> timer task using coroutines show latest task
-- Expire task | Failed task -> time task using coroutines if user doesn't update task status
+## App Showcase 📱
 
-## Android APIs Used
-- Constraint Layout
-- Card View
-- Recycler View API - ListAdapter & DiffUtil API
-- Swipe Gesture API
-- Android Styles and Themes
-- Custom Fonts
-- Material Bottom Sheet Fragments
-- Time Picker Dialog
-- Kotlinx Date/time Library
-- Jetpack Room DB - Entity, DAO
-- Jetpack ViewModels
-- Jetpack Hilt Dependency Injection
+Get a glimpse of PlannerPal in action through these vibrant screenshots:
 
-## Kotlin APIs Used
-- Coroutines for Concurrency - scope, context, dispatcher
-- Flows for observable states and reactive apis - onEach, collect
-- Higher order functions -> Lambdas
-- Language primitives
-    - if/else
-    - variables
-    - dataTypes - Primitive and UserDefined
-- Data classes
-- Sealed classes
-- Collection operation - map,filter
-- Extension functions
-- Scoped operation
+![PlannerPal Image 1](/assets/img.png)
+![PlannerPal Image 2](/assets/img_1.png)
 
+## Features That Wow! ✨
 
-## Other Patterns and APIs
-- MVVM pattern
-- Repository + DataSources Pattern
+- **List Task**: Scroll through your tasks seamlessly with the power of Recycler View.
+- **Create Task**: Easily create tasks with a sleek Bottom Sheet Form, making organization a breeze.
+- **Selecting Start - End Time**: Utilize the TimePicker Dialog to set precise start and end times for your tasks.
+- **Modify Task**: Long-press on a task to effortlessly update it through the interactive Bottom Sheet.
+- **Delete Task**: A simple swipe to the right on the Recycler View removes unwanted tasks, keeping your space clutter-free.
+- **Current Task**: Stay on track with a timer task using coroutines that highlights your latest task.
+- **Expire Task | Failed Task**: Don't worry about missing deadlines - coroutines step in to manage tasks if you forget to update their status.
+- **Take Screenshots**: Capture your tasks with just a tap, ensuring you always have a backup offline.
 
-
-## :cop: License
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
-
-This work is licensed under a
-[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
-
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
-
-[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
-[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
-[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
-
-
+Happy Planning! 🗓️
