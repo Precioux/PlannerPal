@@ -1,6 +1,12 @@
 # PlannerPal
 
-Welcome to PlannerPal, your go-to simple planner for organizing tasks! This project was crafted as the final masterpiece of the Android Programming Course at Amirkabir University of Technology in the fall of 2023.s
+Welcome to PlannerPal, your go-to simple planner for organizing tasks! This project was crafted as the final masterpiece of the Android Programming Course at Amirkabir University of Technology in the fall of 2023.
+
+Programmers:
+
+- [Samin Mahdipour](https://github.com/Precioux) <br />
+- [Sara Rouhani](https://github.com/sa9978) <br />
+- [Melika Bagheri](https://github.com/melikaBagherii) <br />
 
 ## App Showcase 📱
 
